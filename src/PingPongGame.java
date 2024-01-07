@@ -2,10 +2,11 @@ public class PingPongGame implements Runnable {
     private int fps = 120;
     Thread gameLoopThread;
     GameFrame gameFrame;
+    GamePanel gamePanel;
 
     public PingPongGame() {
-        gameFrame = new GameFrame();
-
+        gamePanel = new GamePanel();
+        gameFrame = new GameFrame(gamePanel);
 
 
         gameLoopThread = new Thread(this);
@@ -39,13 +40,13 @@ public class PingPongGame implements Runnable {
 //                deltaU--;
 //            }
 
-            if (deltaF >= 1) {
-                //gamePanel.repaint();
+            if (deltaF >= 1) {//fbs
+                gamePanel.repaint();
                 frames++;
                 deltaF--;
             }
 
-            if (System.currentTimeMillis() - lastCheck >= 1000) {
+            if (System.currentTimeMillis() - lastCheck >= 1000) {//every 1 sec
                 lastCheck = System.currentTimeMillis();
                 System.out.println("FPS: " + frames );
                 frames = 0;

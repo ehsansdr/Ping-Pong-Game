@@ -16,26 +16,17 @@ public class Input extends KeyAdapter {
         switch (e.getKeyCode()){
 
             case KeyEvent.VK_W:
-                System.out.println("www");
+                gamePanel.paddleL.goUp();
                 break;
             case KeyEvent.VK_S:
-                System.out.println("sss");
-
-                ;
-        }
-
-        switch (e.getKeyCode()){
-            case KeyEvent.VK_RIGHT :
-
-                break;
-            case KeyEvent.VK_LEFT :
-
+                gamePanel.paddleL.goDown();
                 break;
             case KeyEvent.VK_UP :
-
+                gamePanel.paddleR.goUp();
                 break;
-            case KeyEvent.VK_DOWN :
 
+            case KeyEvent.VK_DOWN :
+                gamePanel.paddleR.goDown();
                 break;
         }
     }

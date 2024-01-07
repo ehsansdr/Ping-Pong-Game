@@ -24,6 +24,7 @@ public class GamePanel extends JPanel {
         this.setLayout(null);
         //this.add(paddleL); we don't use add fo rectangle subclass we use draw
         //this.add(paddleR);
+
         //setFocusable(true); is essential to have key listener
         this.setFocusable(true);/*****************************/
         this.addKeyListener(inputController);

@@ -3,6 +3,7 @@ import java.awt.*;
 public class Paddle extends Rectangle {
     private int x ;
     private int y = 400;
+    private int speed = 10;
 
     char position  ;//'R' , 'L'
     public int gap = 8 ;
@@ -13,7 +14,7 @@ public class Paddle extends Rectangle {
     //Graphics g;
     public Paddle(char position,int panelWidth,int panelHeight) {
         //this.y = (panelHeight / 2) - (panelHeight/ 2);
-        this.y = 20;
+        this.y = (panelHeight / 2) - (PADDLE_HEIGHT / 2);
         this.position = position;
         this.panelWidth = panelWidth;
         this.panelHeight = panelHeight;
@@ -32,11 +33,27 @@ public class Paddle extends Rectangle {
         }
 
     }
+    public void goUp(){
+        if (y <= 0){
+            y = 0;
+        }else
+            y -= speed;
+    }
+    public void goDown(){
+        if (y >= panelHeight - PADDLE_HEIGHT){
+            y = panelHeight - PADDLE_HEIGHT;
+        }else
+            y += speed;
+    }
+
 
     public void draw(Graphics g){
+        if (position == 'L'){
+            g.setColor(new Color(0x1976D3));
+        }else{
+            g.setColor(new Color(0xD90429));
 
-
-        g.setColor(new Color(0xFFFFFF));
+        }
         g.fillRect(x,y,PADDLE_WIDTH,PADDLE_HEIGHT);
     }
 

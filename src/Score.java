@@ -2,40 +2,58 @@ import java.awt.*;
 
 public class Score extends Rectangle {
     public char id ;//'L' or 'R'
-    public int score = 8;
+    public int score ;
+    public int set ;
     private int xOfScore;
     private int yOfScore = 50 ;
     private int xOfSet;
-    private int yOfSet = 60 ;
+    private int yOfSet = 38 ;
     private int widthOfScore = 70;
     private int heigthOfScore = 30 ;
 
     private int widthOfSet = 30;
     private int heigthOfSet = 40 ;
     private int gapFromMiddle = 20;
-    Color color = new Color(0x2C4981);
-    Font font = new Font("Consolas",Font.BOLD,60);
+    private int gapbetwenScoreAndSet = 20;
+    Color colorOfScore;
+    Color colorOfSet;
+    Font fontOfScore = new Font("Consolas",Font.BOLD,60);
+    Font fontOfSet = new Font("Consolas",Font.BOLD,25);
 
     public Score(char id) {
         this.id = id;
         if (id == 'R'){
+            colorOfScore = new Color(0xB60015);
+            colorOfSet = new Color(0x91021B);
             xOfScore = (900 / 2) + gapFromMiddle;
-            xOfSet = xOfScore - widthOfScore;
+            xOfSet = xOfScore + fontOfScore.getSize() + gapbetwenScoreAndSet;
         }else if (id == 'L'){
-            xOfScore = (900 / 2) - font.getSize() - gapFromMiddle;//we use font.getSize() becuase we can define size
+            colorOfScore = new Color(0x3D65B2);
+            colorOfSet = new Color(0x2B4B83);
+            xOfScore = (900 / 2) - fontOfScore.getSize() - gapFromMiddle;//we use fontOfScore.getSize() becuase we can define size
             //or get sze of our string
-            xOfSet = xOfScore - widthOfScore;
+            xOfSet = (900 / 2) - gapFromMiddle - fontOfScore.getSize() - gapbetwenScoreAndSet - 10;
         }
     }
 
 
     public void draw(Graphics g) {
-        g.setColor(color);
-        g.setFont(font);
         if (id == 'R'){
+            g.setColor(colorOfScore);
+            g.setFont(fontOfScore);
             g.drawString(score / 10 +""+ score +"" ,xOfScore,yOfScore);
+
+            g.setColor(colorOfSet);
+            g.setFont(fontOfSet);
+            g.drawString( set +"" ,xOfSet,yOfSet);
         }else if (id == 'L'){
+            g.setColor(colorOfScore);
+            g.setFont(fontOfScore);
             g.drawString(score / 10 +""+ score +"" ,xOfScore,yOfScore);
+
+            g.setColor(colorOfSet);
+            g.setFont(fontOfSet);
+            g.drawString( set +"" ,xOfSet,yOfSet);
         }
     }
 }

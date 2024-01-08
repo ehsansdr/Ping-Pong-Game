@@ -70,7 +70,7 @@ public class Paddle extends Rectangle {
         if (position == 'L'){
             g.setColor(new Color(0x1976D3));
         }else{
-            g.setColor(new Color(0xD90429));
+            g.setColor(new Color(0xB60015));
 
         }
         g.fillRect(x,y,PADDLE_WIDTH,PADDLE_HEIGHT);

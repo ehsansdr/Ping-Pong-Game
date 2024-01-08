@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0dfdb6a6-01bc-4d78-a260-4fe2466374bb" name="Changes" comment="moving problem solved">
-      <change afterPath="$PROJECT_DIR$/src/Score.java" afterDir="false" />
+    <list default="true" id="0dfdb6a6-01bc-4d78-a260-4fe2466374bb" name="Changes" comment="score set">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GamePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GamePanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Paddle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Paddle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Score.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Score.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -93,7 +93,13 @@
       <option name="presentableId" value="LOCAL‎۰۰۰۰۵" />
       <updated>1704697310218</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL‎۰۰۰۰۶" summary="score set">
+      <created>1704699807467</created>
+      <option name="number" value="LOCAL‎۰۰۰۰۶" />
+      <option name="presentableId" value="LOCAL‎۰۰۰۰۶" />
+      <updated>1704699807467</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -114,6 +120,7 @@
     <MESSAGE value="paddle added" />
     <MESSAGE value="intail paddle move done!!!" />
     <MESSAGE value="moving problem solved" />
-    <option name="LAST_COMMIT_MESSAGE" value="moving problem solved" />
+    <MESSAGE value="score set" />
+    <option name="LAST_COMMIT_MESSAGE" value="score set" />
   </component>
 </project>

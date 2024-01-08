@@ -48,6 +48,7 @@ public class GamePanel extends JPanel {
         //left bound
         g.drawLine(GAME_PANEL_WIDTH - borderGapFrom,0,GAME_PANEL_WIDTH - borderGapFrom ,GAME_PANEL_HEIGHT);
         //right bound
+        g.setColor(new Color(0x3D65B2));
         g.drawLine(borderGapFrom,0,borderGapFrom ,GAME_PANEL_HEIGHT);
 
         draw(g);

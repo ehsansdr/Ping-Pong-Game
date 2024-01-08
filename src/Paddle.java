@@ -9,6 +9,17 @@ public class Paddle extends Rectangle {
     public int gap = 8 ;
     private int panelWidth  ;
     private int panelHeight  ;
+
+    /**
+     * because we can not move all paddles at the same time we use boolean
+     * at the time we can only receive one key signal in keyboard
+     * but we can manipulate lots of boolean at the same time
+     * so we move paddle  indirectly by key change boolean and boolean execute method
+     * and input not execute method directly it changes boolean by releasing and pressing
+     * 120 fbs is excute in loop
+     * */
+    public boolean goUp ;
+    public boolean goDown ;
     private final int PADDLE_WIDTH = 25;
     private final int PADDLE_HEIGHT = PADDLE_WIDTH * 4;
     //Graphics g;
@@ -32,6 +43,14 @@ public class Paddle extends Rectangle {
             this.setBounds(new Rectangle(PADDLE_WIDTH,PADDLE_HEIGHT));
         }
 
+    }
+    public void move(){
+        if (goUp){
+            goUp();
+        }
+        if (goDown){
+            goDown();
+        }
     }
     public void goUp(){
         if (y <= 0){

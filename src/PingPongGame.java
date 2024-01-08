@@ -1,5 +1,6 @@
 public class PingPongGame implements Runnable {
     private int fps = 120;
+    private int UPS = 120;
     Thread gameLoopThread;
     GameFrame gameFrame;
     GamePanel gamePanel;
@@ -16,7 +17,7 @@ public class PingPongGame implements Runnable {
     @Override
     public void run() {
         double timePerFrame = 1000000000.0 / fps;
-        //double timePerUpdate = 1000000000.0 / UPS_SET;
+        double timePerUpdate = 1000000000.0 / UPS;
 
         long previousTime = System.nanoTime();
 
@@ -30,15 +31,16 @@ public class PingPongGame implements Runnable {
         while (true) {
             long currentTime = System.nanoTime();
 
-            //deltaU += (currentTime - previousTime) / timePerUpdate;
+            deltaU += (currentTime - previousTime) / timePerUpdate;
             deltaF += (currentTime - previousTime) / timePerFrame;
             previousTime = currentTime;
 
-//            if (deltaU >= 1) {
-//                update();
-//                updates++;
-//                deltaU--;
-//            }
+            if (deltaU >= 1) {
+                gamePanel.paddleL.move();
+                gamePanel.paddleR.move();
+                updates++;
+                deltaU--;
+            }
 
             if (deltaF >= 1) {//fbs
                 gamePanel.repaint();
@@ -48,9 +50,9 @@ public class PingPongGame implements Runnable {
 
             if (System.currentTimeMillis() - lastCheck >= 1000) {//every 1 sec
                 lastCheck = System.currentTimeMillis();
-                System.out.println("FPS: " + frames );
+                System.out.println("FPS: " + frames +" | " + updates );
                 frames = 0;
-                //updates = 0;
+                updates = 0;
             }
         }
     }

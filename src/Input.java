@@ -16,18 +16,40 @@ public class Input extends KeyAdapter {
         switch (e.getKeyCode()){
 
             case KeyEvent.VK_W:
-                gamePanel.paddleL.goUp();
+                gamePanel.paddleL.goUp = true;
                 break;
             case KeyEvent.VK_S:
-                gamePanel.paddleL.goDown();
+                gamePanel.paddleL.goDown = true;
                 break;
             case KeyEvent.VK_UP :
-                gamePanel.paddleR.goUp();
+                gamePanel.paddleR.goUp = true;
                 break;
 
             case KeyEvent.VK_DOWN :
-                gamePanel.paddleR.goDown();
+                gamePanel.paddleR.goDown = true;
                 break;
         }
     }
+    @Override
+    public void keyReleased(KeyEvent e) {
+        //this class help us to move snake in panel
+
+        switch (e.getKeyCode()){
+
+            case KeyEvent.VK_W:
+                gamePanel.paddleL.goUp = false;
+                break;
+            case KeyEvent.VK_S:
+                gamePanel.paddleL.goDown= false;
+                break;
+            case KeyEvent.VK_UP :
+                gamePanel.paddleR.goUp = false;
+                break;
+
+            case KeyEvent.VK_DOWN :
+                gamePanel.paddleR.goDown = false;
+                break;
+        }
+    }
+
 }

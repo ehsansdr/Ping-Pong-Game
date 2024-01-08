@@ -36,8 +36,7 @@ public class PingPongGame implements Runnable {
             previousTime = currentTime;
 
             if (deltaU >= 1) {
-                gamePanel.paddleL.move();
-                gamePanel.paddleR.move();
+                gamePanel.update();
                 updates++;
                 deltaU--;
             }

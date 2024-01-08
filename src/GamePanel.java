@@ -11,6 +11,7 @@ public class GamePanel extends JPanel {
     private Graphics g;
     private Score scoreR ;
     private Score scoreL ;
+    private Ball ball;
 
     int middleCircleDiameter = 240;
 
@@ -21,6 +22,7 @@ public class GamePanel extends JPanel {
         paddleR = new Paddle('R',GAME_PANEL_WIDTH,GAME_PANEL_HEIGHT);
         scoreL = new Score('L');
         scoreR = new Score('R');
+        ball = new Ball();
         inputController = new Input(this);
 
         this.setPreferredSize(new Dimension(GAME_PANEL_WIDTH,GAME_PANEL_HEIGHT));
@@ -33,6 +35,11 @@ public class GamePanel extends JPanel {
         this.setFocusable(true);/*****************************/
         this.addKeyListener(inputController);
 
+    }
+    public void update(){
+        paddleL.move();
+        paddleR.move();
+        ball.move();
     }
 
     @Override
@@ -59,6 +66,7 @@ public class GamePanel extends JPanel {
         paddleR.draw(g);
         scoreL.draw(g);
         scoreR.draw(g);
+        ball.draw(g);
 
     }
 

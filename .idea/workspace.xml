@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0dfdb6a6-01bc-4d78-a260-4fe2466374bb" name="Changes" comment="score set">
+    <list default="true" id="0dfdb6a6-01bc-4d78-a260-4fe2466374bb" name="Changes" comment="score class done">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Paddle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Paddle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Score.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Score.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Ball.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Ball.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GamePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GamePanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PingPongGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PingPongGame.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -99,7 +100,13 @@
       <option name="presentableId" value="LOCAL‎۰۰۰۰۶" />
       <updated>1704699807467</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL‎۰۰۰۰۷" summary="score class done">
+      <created>1704701030953</created>
+      <option name="number" value="LOCAL‎۰۰۰۰۷" />
+      <option name="presentableId" value="LOCAL‎۰۰۰۰۷" />
+      <updated>1704701030953</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -121,6 +128,7 @@
     <MESSAGE value="intail paddle move done!!!" />
     <MESSAGE value="moving problem solved" />
     <MESSAGE value="score set" />
-    <option name="LAST_COMMIT_MESSAGE" value="score set" />
+    <MESSAGE value="score class done" />
+    <option name="LAST_COMMIT_MESSAGE" value="score class done" />
   </component>
 </project>

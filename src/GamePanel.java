@@ -9,6 +9,8 @@ public class GamePanel extends JPanel {
     public Paddle paddleR ;
     public Paddle paddleL;
     private Graphics g;
+    private Score scoreR ;
+    private Score scoreL ;
 
     int middleCircleDiameter = 240;
 
@@ -17,6 +19,8 @@ public class GamePanel extends JPanel {
     public GamePanel() {
         paddleL = new Paddle('L',GAME_PANEL_WIDTH,GAME_PANEL_HEIGHT);
         paddleR = new Paddle('R',GAME_PANEL_WIDTH,GAME_PANEL_HEIGHT);
+        scoreL = new Score('L');
+        scoreR = new Score('R');
         inputController = new Input(this);
 
         this.setPreferredSize(new Dimension(GAME_PANEL_WIDTH,GAME_PANEL_HEIGHT));
@@ -34,8 +38,6 @@ public class GamePanel extends JPanel {
     @Override
     public void paint(Graphics g) {
         super.paint(g);
-
-
         g.setColor(new Color(0xBBBBBB));
         //middle line
         g.drawLine(GAME_PANEL_WIDTH/2,0,GAME_PANEL_WIDTH/2,GAME_PANEL_HEIGHT);
@@ -54,6 +56,9 @@ public class GamePanel extends JPanel {
     public void draw(Graphics g){
         paddleL.draw(g);
         paddleR.draw(g);
+        scoreL.draw(g);
+        scoreR.draw(g);
+
     }
 
 }

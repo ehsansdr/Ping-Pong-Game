@@ -1,8 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0dfdb6a6-01bc-4d78-a260-4fe2466374bb" name="Changes" comment="paddle R done">
+    <list default="true" id="0dfdb6a6-01bc-4d78-a260-4fe2466374bb" name="Changes" comment="paddle collision done">
+      <change afterPath="$PROJECT_DIR$/src/jj.form" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/jj.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Ball.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Ball.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/GamePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GamePanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Paddle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Paddle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Score.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Score.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -116,7 +122,13 @@
       <option name="presentableId" value="LOCAL‎۰۰۰۰۹" />
       <updated>1704804642433</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL‎۰۰۰۱۰" summary="paddle collision done">
+      <created>1704804926833</created>
+      <option name="number" value="LOCAL‎۰۰۰۱۰" />
+      <option name="presentableId" value="LOCAL‎۰۰۰۱۰" />
+      <updated>1704804926833</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -141,6 +153,7 @@
     <MESSAGE value="score class done" />
     <MESSAGE value="ball class added" />
     <MESSAGE value="paddle R done" />
-    <option name="LAST_COMMIT_MESSAGE" value="paddle R done" />
+    <MESSAGE value="paddle collision done" />
+    <option name="LAST_COMMIT_MESSAGE" value="paddle collision done" />
   </component>
 </project>

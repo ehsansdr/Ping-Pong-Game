@@ -4,7 +4,7 @@ public class Ball extends Rectangle {
     int diameter = 25;
     int x = 400;
     int y = 300;
-    int speed = 3  ;
+    int speed = 5 ;
     int xDirect = 1;
     int yDirect = -1;
 

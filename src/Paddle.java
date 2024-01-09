@@ -5,10 +5,13 @@ public class Paddle extends Rectangle {
     public int y = 400;
     private int speed = 5;
 
-    char position  ;//'R' , 'L'
+    public char position  ;//'R' , 'L'
     public int gap = 8 ;
     public int panelWidth;
     public int panelHeight;
+    //we declare them as public becuase I use them in drawWinnerInfo in Score class
+    public Color colorOfPaddle;
+
 
     /**
      * because we can not move all paddles at the same time we use boolean
@@ -35,12 +38,14 @@ public class Paddle extends Rectangle {
             this.x = panelWidth - PADDLE_WIDTH - gap  ;
             this.setLocation(new Point(this.x ,this.y));
             this.setBounds(new Rectangle(PADDLE_WIDTH,PADDLE_HEIGHT));
+            colorOfPaddle = new Color(0xB60015);
 
         }
         else if (position == 'L'){
             this.x = 8 ;
             this.setLocation(new Point(gap,this.y));
             this.setBounds(new Rectangle(PADDLE_WIDTH,PADDLE_HEIGHT));
+            colorOfPaddle = new Color(0x1976D3);
         }
 
     }
@@ -67,12 +72,7 @@ public class Paddle extends Rectangle {
 
 
     public void draw(Graphics g){
-        if (position == 'L'){
-            g.setColor(new Color(0x1976D3));
-        }else{
-            g.setColor(new Color(0xB60015));
-
-        }
+        g.setColor(colorOfPaddle);
         g.fillRect(x,y,PADDLE_WIDTH,PADDLE_HEIGHT);
     }
 

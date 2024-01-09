@@ -35,8 +35,8 @@ public class GamePanel extends JPanel {
     private void objectCreation() {
         paddleL = new Paddle('L',GAME_PANEL_WIDTH,GAME_PANEL_HEIGHT);
         paddleR = new Paddle('R',GAME_PANEL_WIDTH,GAME_PANEL_HEIGHT);
-        scoreL = new Score('L');
-        scoreR = new Score('R');
+        scoreL = new Score(paddleL);
+        scoreR = new Score(paddleR);
         ball = new Ball();
         inputController = new Input(this);
     }
@@ -75,10 +75,23 @@ public class GamePanel extends JPanel {
         }
         if (ball.x < 0){
             ball.xDirect *= -1;
+            scoreR.scoreUp();
+            if (scoreR.score == 5){
+                scoreR.set++;
+                scoreR.score = 0;
+                scoreL.score = 0;
+            }
             System.out.println("5 if");
         }
         if (ball.x > GAME_PANEL_WIDTH - ball.diameter){
             ball.xDirect *= -1;
+            scoreL.scoreUp();
+            if (scoreL.score == 5){
+                scoreL.set++;
+                scoreL.score = 0;
+                scoreR.score = 0;
+            }
+
             System.out.println("6 if");
         }
     }
@@ -108,7 +121,11 @@ public class GamePanel extends JPanel {
         scoreL.draw(g);
         scoreR.draw(g);
         ball.draw(g);
+        if (scoreR.score == 1){
+            scoreR.drawWinnerInfo(g);
+        }else if(scoreL.score == 1){
+            scoreL.drawWinnerInfo(g);
+        }
 
     }
-
 }

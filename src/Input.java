@@ -28,6 +28,10 @@ public class Input extends KeyAdapter {
             case KeyEvent.VK_DOWN :
                 gamePanel.paddleR.goDown = true;
                 break;
+
+            case KeyEvent.VK_SPACE:
+                gamePanel.newGame();
+                break;
         }
     }
     @Override

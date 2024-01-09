@@ -2,6 +2,7 @@ import javax.swing.*;
 import java.awt.*;
 
 public class GamePanel extends JPanel {
+    boolean gameRunning;
     public final int GAME_PANEL_WIDTH = 900;
     public final int GAME_PANEL_HEIGHT =  550;//(int) GAME_PANEL_WIDTH * (5/9)
     Color panelColor = new Color(0x14213D);
@@ -18,7 +19,7 @@ public class GamePanel extends JPanel {
     public int borderGapFrom = 8;
 
     public GamePanel() {
-        objectCreation();
+        newGame();
 
         this.setPreferredSize(new Dimension(GAME_PANEL_WIDTH,GAME_PANEL_HEIGHT));
         this.setBackground(panelColor);
@@ -30,6 +31,10 @@ public class GamePanel extends JPanel {
         this.setFocusable(true);/*****************************/
         this.addKeyListener(inputController);
 
+    }
+    public void newGame(){
+        gameRunning = true;
+        objectCreation();
     }
 
     private void objectCreation() {

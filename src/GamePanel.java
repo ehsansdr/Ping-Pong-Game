@@ -67,7 +67,9 @@ public class GamePanel extends JPanel {
             ball.xDirect *= -1;
             System.out.println("3 if");
         }
-        if (ball.intersects(paddleL)){// NOT OK
+        if (ball.x <= paddleL.x + paddleL.PADDLE_WIDTH &&
+            ball.y + ball.diameter >= paddleL.y        &&
+            ball.y <= bottomOfPaddleL){// NOT OK
             ball.xDirect *= -1;
             System.out.println("4 if");
         }

@@ -1,12 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0dfdb6a6-01bc-4d78-a260-4fe2466374bb" name="Changes" comment="ball class added">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Ball.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Ball.java" afterDir="false" />
+    <list default="true" id="0dfdb6a6-01bc-4d78-a260-4fe2466374bb" name="Changes" comment="paddle R done">
       <change beforePath="$PROJECT_DIR$/src/GamePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GamePanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Paddle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Paddle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/PingPongGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PingPongGame.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,15 +30,15 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "last_opened_file_path": "C:/Users/Public/src/src/com/company/PingPongGame"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Public/src/src/com/company/PingPongGame&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
@@ -114,7 +110,13 @@
       <option name="presentableId" value="LOCAL‎۰۰۰۰۸" />
       <updated>1704701747221</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL‎۰۰۰۰۹" summary="paddle R done">
+      <created>1704804642433</created>
+      <option name="number" value="LOCAL‎۰۰۰۰۹" />
+      <option name="presentableId" value="LOCAL‎۰۰۰۰۹" />
+      <updated>1704804642433</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -138,6 +140,7 @@
     <MESSAGE value="score set" />
     <MESSAGE value="score class done" />
     <MESSAGE value="ball class added" />
-    <option name="LAST_COMMIT_MESSAGE" value="ball class added" />
+    <MESSAGE value="paddle R done" />
+    <option name="LAST_COMMIT_MESSAGE" value="paddle R done" />
   </component>
 </project>

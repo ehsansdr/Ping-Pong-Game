@@ -4,6 +4,7 @@ public class Score extends Rectangle {
     public char id ;//'L' or 'R'
     public int score ;
     public int set ;
+    private Paddle paddle;
     private int xOfScore;
     private int yOfScore = 50 ;
     private int xOfSet;
@@ -21,6 +22,7 @@ public class Score extends Rectangle {
     Font fontOfSet = new Font("Consolas",Font.BOLD,25);
 
     public Score(Paddle paddle) {
+        this.paddle =paddle;
         this.id = paddle.position;
         if (id == 'R'){
             colorOfScore = paddle.colorOfPaddle;
@@ -38,8 +40,10 @@ public class Score extends Rectangle {
 
     public void scoreUp(){
         score++;
-        System.out.println(this + " gain score");
+        System.out.println(this.id + " gains score");
     }
+
+
 
 
 
@@ -68,6 +72,7 @@ public class Score extends Rectangle {
     public void drawWinnerInfo(Graphics g){
         g.setColor(this.colorOfScore);//we get color from object not its parameter
         g.setFont(new Font("Agency FB",Font.BOLD,60));
+
         if (this.id == 'R'){
             g.drawString("RED  WINS", 350,120);//these numbers are checked by experimenting many times
         }else {

@@ -10,8 +10,8 @@ public class GamePanel extends JPanel {
     public Paddle paddleR ;
     public Paddle paddleL;
     private Graphics g;
-    private Score scoreR ;
-    private Score scoreL ;
+    public Score scoreR ;
+    public Score scoreL ;
     private Ball ball;
 
     int middleCircleDiameter = 240;
@@ -47,57 +47,77 @@ public class GamePanel extends JPanel {
     }
 
     public void update(){
-        paddleL.move();
-        paddleR.move();
-        ball.move();
+        if (gameRunning) {
+            paddleL.move();
+            paddleR.move();
+            ball.move();
+        }//we don't need else because if we want to have new game we press space
+    }
+    public void rulesChecker(){
+        //each ball hitting the left wall and right wall these check their work
+        if(scoreL.score == 2){
+            scoreL.score = 0;
+            scoreL.set++;
+            scoreR.score = 0;
+            //newRound();
+        }
+        if(scoreR.score == 2){
+            scoreR.score = 0;
+            scoreR.set++;
+            scoreL.score = 0;
+            //newRound();
+        }
+
+        //for winner detecting these ifs do them
+        if (scoreL.set == 2 ){
+            paddleL.isItWinner =true;
+            gameRunning = false;
+        }else if (scoreR.set == 2 ){
+            paddleR.isItWinner =true;
+            gameRunning = false;
+        }
     }
 
     public void collisionChecking(){
 
-        int bottomOfPaddleR = paddleR.y + paddleR.PADDLE_HEIGHT;
-        int bottomOfPaddleL = paddleL.y + paddleL.PADDLE_HEIGHT;
 
-        if (ball.y + ball.diameter >= GAME_PANEL_HEIGHT){
-            ball.yDirect *= -1;
-            System.out.println("1 if" );
-        }
-        if (ball.y == 0){
-            ball.yDirect *= -1;
-            System.out.println("2 if");
-        }
-        if (ball.x + ball.diameter >= paddleR.x &&
-            ball.y + ball.diameter >= paddleR.y &&
-            ball.y <= bottomOfPaddleR){
+        ///we dint need to check and score up when game in not running
+        if (gameRunning) {
+            int bottomOfPaddleR = paddleR.y + paddleR.PADDLE_HEIGHT;
+            int bottomOfPaddleL = paddleL.y + paddleL.PADDLE_HEIGHT;
 
-            ball.xDirect *= -1;
-            System.out.println("3 if");
-        }
-        if (ball.x <= paddleL.x + paddleL.PADDLE_WIDTH &&
-            ball.y + ball.diameter >= paddleL.y        &&
-            ball.y <= bottomOfPaddleL){// NOT OK
-            ball.xDirect *= -1;
-            System.out.println("4 if");
-        }
-        if (ball.x < 0){
-            ball.xDirect *= -1;
-            scoreR.scoreUp();
-            if (scoreR.score == 5){
-                scoreR.set++;
-                scoreR.score = 0;
-                scoreL.score = 0;
+            if (ball.y + ball.diameter >= GAME_PANEL_HEIGHT) {
+                ball.yDirect *= -1;
+                System.out.println("ball hit the bottom of frame");
             }
-            System.out.println("5 if");
-        }
-        if (ball.x > GAME_PANEL_WIDTH - ball.diameter){
-            ball.xDirect *= -1;
-            scoreL.scoreUp();
-            if (scoreL.score == 5){
-                scoreL.set++;
-                scoreL.score = 0;
-                scoreR.score = 0;
+            if (ball.y == 0) {
+                ball.yDirect *= -1;
+                System.out.println("ball hit the upper of frame");
             }
+            if (ball.x + ball.diameter >= paddleR.x &&
+                    ball.y + ball.diameter >= paddleR.y &&
+                    ball.y <= bottomOfPaddleR) {
 
-            System.out.println("6 if");
+                ball.xDirect *= -1;
+                System.out.println("ball hit the Right paddle");
+            }
+            if (ball.x <= paddleL.x + paddleL.PADDLE_WIDTH &&
+                    ball.y + ball.diameter >= paddleL.y &&
+                    ball.y <= bottomOfPaddleL) {// NOT OK
+                ball.xDirect *= -1;
+                System.out.println("ball hit the left paddle");
+            }
+            if (ball.x < 0) {
+                ball.xDirect *= -1;
+                scoreR.scoreUp();
+
+                System.out.println("ball passed the left border");
+            }
+            if (ball.x > GAME_PANEL_WIDTH - ball.diameter) {
+                ball.xDirect *= -1;
+                scoreL.scoreUp();
+                System.out.println("ball passed the right border");
+            }
         }
     }
 
@@ -126,9 +146,13 @@ public class GamePanel extends JPanel {
         scoreL.draw(g);
         scoreR.draw(g);
         ball.draw(g);
-        if (scoreR.score == 1){
+
+
+        //when someone wins :
+        //here draw the conclusion
+        if (paddleR.isItWinner){
             scoreR.drawWinnerInfo(g);
-        }else if(scoreL.score == 1){
+        } else if (paddleL.isItWinner) {
             scoreL.drawWinnerInfo(g);
         }
 

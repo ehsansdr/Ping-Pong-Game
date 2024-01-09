@@ -38,6 +38,8 @@ public class PingPongGame implements Runnable {
             if (deltaU >= 1) {
                 gamePanel.update();
                 gamePanel.collisionChecking();
+                gamePanel.rulesChecker();//detecting winner and start new round when hit the borders
+                //and score issues check here
                 updates++;
                 deltaU--;
             }

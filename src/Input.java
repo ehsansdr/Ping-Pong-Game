@@ -30,7 +30,10 @@ public class Input extends KeyAdapter {
                 break;
 
             case KeyEvent.VK_SPACE:
-                gamePanel.newGame();
+                //we have this if because we want only use t when game is over
+                //not in middle of game when it appears to press we allow to press
+                if (!gamePanel.gameRunning)
+                    gamePanel.newGame();
                 break;
         }
     }

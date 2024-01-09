@@ -4,7 +4,8 @@ public class Paddle extends Rectangle {
     public int x ;
     public int y = 400;
     private int speed = 5;
-
+    boolean isItWinner = false;//we declare mode that use when the player wins by this boolean and
+    //we check and manipulate in another class so we declare it public
     public char position  ;//'R' , 'L'
     public int gap = 8 ;
     public int panelWidth;

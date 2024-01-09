@@ -18,12 +18,7 @@ public class GamePanel extends JPanel {
     public int borderGapFrom = 8;
 
     public GamePanel() {
-        paddleL = new Paddle('L',GAME_PANEL_WIDTH,GAME_PANEL_HEIGHT);
-        paddleR = new Paddle('R',GAME_PANEL_WIDTH,GAME_PANEL_HEIGHT);
-        scoreL = new Score('L');
-        scoreR = new Score('R');
-        ball = new Ball();
-        inputController = new Input(this);
+        objectCreation();
 
         this.setPreferredSize(new Dimension(GAME_PANEL_WIDTH,GAME_PANEL_HEIGHT));
         this.setBackground(panelColor);
@@ -36,10 +31,54 @@ public class GamePanel extends JPanel {
         this.addKeyListener(inputController);
 
     }
+
+    private void objectCreation() {
+        paddleL = new Paddle('L',GAME_PANEL_WIDTH,GAME_PANEL_HEIGHT);
+        paddleR = new Paddle('R',GAME_PANEL_WIDTH,GAME_PANEL_HEIGHT);
+        scoreL = new Score('L');
+        scoreR = new Score('R');
+        ball = new Ball();
+        inputController = new Input(this);
+    }
+
     public void update(){
         paddleL.move();
         paddleR.move();
         ball.move();
+    }
+
+    public void collisionChecking(){
+
+        int bottomOfPaddleR = paddleR.y + paddleR.PADDLE_HEIGHT;
+        int bottomOfPaddleL = paddleL.y + paddleL.PADDLE_HEIGHT;
+
+        if (ball.y + ball.diameter >= GAME_PANEL_HEIGHT){
+            ball.yDirect *= -1;
+            System.out.println("1 if" );
+        }
+        if (ball.y == 0){
+            ball.yDirect *= -1;
+            System.out.println("2 if");
+        }
+        if (ball.x + ball.diameter >= paddleR.x &&
+            ball.y + ball.diameter >= paddleR.y &&
+            ball.y <= bottomOfPaddleR){
+
+            ball.xDirect *= -1;
+            System.out.println("3 if");
+        }
+        if (ball.intersects(paddleL)){// NOT OK
+            ball.xDirect *= -1;
+            System.out.println("4 if");
+        }
+        if (ball.x < 0){
+            ball.xDirect *= -1;
+            System.out.println("5 if");
+        }
+        if (ball.x > GAME_PANEL_WIDTH - ball.diameter){
+            ball.xDirect *= -1;
+            System.out.println("6 if");
+        }
     }
 
     @Override

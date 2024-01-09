@@ -1,14 +1,14 @@
 import java.awt.*;
 
 public class Paddle extends Rectangle {
-    private int x ;
-    private int y = 400;
-    private int speed = 10;
+    public int x ;
+    public int y = 400;
+    private int speed = 5;
 
     char position  ;//'R' , 'L'
     public int gap = 8 ;
-    private int panelWidth  ;
-    private int panelHeight  ;
+    public int panelWidth;
+    public int panelHeight;
 
     /**
      * because we can not move all paddles at the same time we use boolean
@@ -20,8 +20,8 @@ public class Paddle extends Rectangle {
      * */
     public boolean goUp ;
     public boolean goDown ;
-    private final int PADDLE_WIDTH = 25;
-    private final int PADDLE_HEIGHT = PADDLE_WIDTH * 4;
+    public final int PADDLE_WIDTH = 25;
+    public final int PADDLE_HEIGHT = PADDLE_WIDTH * 4;
     //Graphics g;
     public Paddle(char position,int panelWidth,int panelHeight) {
         //this.y = (panelHeight / 2) - (panelHeight/ 2);

@@ -37,6 +37,7 @@ public class PingPongGame implements Runnable {
 
             if (deltaU >= 1) {
                 gamePanel.update();
+                gamePanel.collisionChecking();
                 updates++;
                 deltaU--;
             }
@@ -49,7 +50,7 @@ public class PingPongGame implements Runnable {
 
             if (System.currentTimeMillis() - lastCheck >= 1000) {//every 1 sec
                 lastCheck = System.currentTimeMillis();
-                System.out.println("FPS: " + frames +" | " + updates );
+                //System.out.println("FPS: " + frames +" | " + updates );
                 frames = 0;
                 updates = 0;
             }

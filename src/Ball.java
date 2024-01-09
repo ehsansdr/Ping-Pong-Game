@@ -3,10 +3,10 @@ import java.awt.*;
 public class Ball extends Rectangle {
     int diameter = 25;
     int x = 400;
-    int y = 400;
-    int speed = 1;
+    int y = 300;
+    int speed = 3  ;
     int xDirect = 1;
-    int yDirect = 1;
+    int yDirect = -1;
 
     public Ball() {
 
@@ -14,8 +14,8 @@ public class Ball extends Rectangle {
 
 
     public void move(){
-        x += speed;
-        y += speed;
+        x += speed * xDirect;
+        //y += speed * yDirect;
     }
 
 

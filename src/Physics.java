@@ -34,44 +34,70 @@ public class Physics {
                     ball.y < bottomOfPaddleR) {// it is necessary to NOT have = ,just < or >
 
                 ball.xDirect *= -1;
-                gamePanel.paddleTouched = 'R';//so when collision happend we should change the history of hitting
-                //so paddleTouched staore last hit to help us to have correct color
+                gamePanel.paddleTouched = 'R';//so when collision happened we should change the history of hitting
+                //so paddleTouched store last hit to help us to have correct color
                 System.out.println("Right paddle hit");
             }
             if (ball.x <= paddleL.x + paddleL.PADDLE_WIDTH &&
                     ball.y + ball.diameter > paddleL.y &&
                     ball.y < bottomOfPaddleL) {
                 ball.xDirect *= -1;
-                gamePanel.paddleTouched = 'L';//so when collision happend we should change the history of hitting
-                //so paddleTouched staore last hit to help us to have correct color
+                gamePanel.paddleTouched = 'L';//so when collision happened we should change the history of hitting
+                //so paddleTouched store last hit to help us to have correct color
                 System.out.println("Left paddle hit");
             }
 
 
+            //for hitting top of paddle left
             /**         OK              */
-            if (ball.x <= paddleL.x + paddleL.PADDLE_WIDTH){
+            if (ball.x < paddleL.x + paddleL.PADDLE_WIDTH){
                 //System.out.println("\n OUTER OF IF EX");
 
                 /*               OK            */
-                if (ball.y  + ball.diameter == paddleL.y) {
+                if (ball.y + ball.diameter == paddleL.y) {
                     //top edge of paddle left check in this if
 
                     ball.yDirect = -1;
-                    System.out.println("TOP EDGE OF PaddleL ");
-                    gamePanel.paddleTouched = 'L';//so when collision happend we should change the history of hitting
-                    //so paddleTouched staore last hit to help us to have correct color
+                    System.out.println("\nTOP EDGE OF PaddleL ");
+                    gamePanel.paddleTouched = 'L';//so when collision happened we should change the history of hitting
+                    //so paddleTouched store last hit to help us to have correct color
                     }
 
                 /**                  OK             */
-                if (ball.y  == paddleL.y + paddleL.PADDLE_HEIGHT) {
+                if (ball.y == paddleL.y + paddleL.PADDLE_HEIGHT) {
 
                     //down edge of paddle left check in this if
                     ball.yDirect = 1;
-                    System.out.println("DOWN EDGE OF PaddleL " );
-                    gamePanel.paddleTouched = 'L';//so when collision happend we should change the history of hitting
-                    //so paddleTouched staore last hit to help us to have correct color
+                    System.out.println("\nDOWN EDGE OF PaddleL " );
+                    gamePanel.paddleTouched = 'L';//so when collision happened we should change the history of hitting
+                    //so paddleTouched store last hit to help us to have correct color
                     }
                 }
+//
+//            //for hitting top of paddle right
+//            if (ball.x + ball.diameter >= paddleR.x){
+//                //System.out.println("\n OUTER OF IF EX");
+//
+//                /*               OK            */
+//                if (ball.y  + ball.diameter == paddleL.y) {
+//                    //top edge of paddle left check in this if
+//
+//                    ball.yDirect = -1;
+//                    System.out.println("TOP EDGE OF PaddleR ");
+//                    gamePanel.paddleTouched = 'R';//so when collision happened we should change the history of hitting
+//                    //so paddleTouched store last hit to help us to have correct color
+//                    }
+//
+//                /**                  OK             */
+//                if (ball.y  == paddleL.y + paddleL.PADDLE_HEIGHT) {
+//
+//                    //down edge of paddle left check in this if
+//                    ball.yDirect = 1;
+//                    System.out.println("DOWN EDGE OF PaddleR " );
+//                    gamePanel.paddleTouched = 'R';//so when collision happened we should change the history of hitting
+//                    //so paddleTouched store last hit to help us to have correct color
+//                    }
+//                }
             if (ball.x < 0) {
                 ball.xDirect *= -1;
                 gamePanel.scoreR.scoreUp();

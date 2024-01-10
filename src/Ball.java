@@ -3,11 +3,14 @@ import java.util.Random;
 
 public class Ball extends Rectangle {
     int diameter = 25;
-    int x = 130;//180 50  -1 +1 ,,,, 130 450  -1 -1 it  for checking physics rules
-    int y = 450;
+    //this comments are added for checking
+    // for checking  edges left paddle 180 50  -1 +1 ,,,, 130 450  -1 -1 it  for checking physics rules
+    // for checking  edges right (830 to 812) 380  1 -1 ,,,, (830 to 812) 150s  1 1 it  for checking physics rules
+    int x = 802;
+    int y = 145;
     int speed = 1 ;
-    int xDirect = -1;
-    int yDirect = -1;
+    int xDirect = 1;
+    int yDirect = 1;
 
     private Random random;
 

@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0dfdb6a6-01bc-4d78-a260-4fe2466374bb" name="Changes" comment="phisics rules for paddle l is done">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Ball.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Ball.java" afterDir="false" />
+    <list default="true" id="0dfdb6a6-01bc-4d78-a260-4fe2466374bb" name="Changes" comment="phisics rules for paddle l is done 2">
       <change beforePath="$PROJECT_DIR$/src/Physics.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Physics.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -154,7 +152,13 @@
       <option name="presentableId" value="LOCAL‎۰۰۰۱۵" />
       <updated>1704891660220</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL‎۰۰۰۱۶" summary="phisics rules for paddle l is done 2">
+      <created>1704893569053</created>
+      <option name="number" value="LOCAL‎۰۰۰۱۶" />
+      <option name="presentableId" value="LOCAL‎۰۰۰۱۶" />
+      <updated>1704893569053</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -186,6 +190,7 @@
     <MESSAGE value="new game and setting and checking rules done" />
     <MESSAGE value="ball color changing set" />
     <MESSAGE value="phisics rules for paddle l is done" />
-    <option name="LAST_COMMIT_MESSAGE" value="phisics rules for paddle l is done" />
+    <MESSAGE value="phisics rules for paddle l is done 2" />
+    <option name="LAST_COMMIT_MESSAGE" value="phisics rules for paddle l is done 2" />
   </component>
 </project>

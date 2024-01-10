@@ -13,6 +13,7 @@ public class GamePanel extends JPanel {
     public Score scoreR ;
     public Score scoreL ;
     private Ball ball;
+    public Physics physicsRules;
 
     public char paddleTouched = 'N';//because feature when ball hit the red paddle repaint to red and when
     //hit blue return to blue color
@@ -48,6 +49,7 @@ public class GamePanel extends JPanel {
         scoreL = new Score(paddleL);
         scoreR = new Score(paddleR);
         ball = new Ball();
+        physicsRules = new Physics(this,paddleR,paddleL,ball);
         inputController = new Input(this);
     }
 
@@ -80,53 +82,6 @@ public class GamePanel extends JPanel {
         }else if (scoreR.set == 2 ){
             paddleR.isItWinner =true;
             gameRunning = false;
-        }
-    }
-
-    public void collisionChecking(){
-
-
-        ///we dint need to check and score up when game in not running
-        if (gameRunning) {
-            int bottomOfPaddleR = paddleR.y + paddleR.PADDLE_HEIGHT;
-            int bottomOfPaddleL = paddleL.y + paddleL.PADDLE_HEIGHT;
-
-            if (ball.y + ball.diameter >= GAME_PANEL_HEIGHT) {
-                ball.yDirect *= -1;
-                System.out.println("ball hit the bottom of frame");
-            }
-            if (ball.y == 0) {
-                ball.yDirect *= -1;
-                System.out.println("ball hit the upper of frame");
-            }
-            if (ball.x + ball.diameter >= paddleR.x &&
-                    ball.y + ball.diameter >= paddleR.y &&
-                    ball.y <= bottomOfPaddleR) {
-
-                ball.xDirect *= -1;
-                paddleTouched = 'R';//so when collision happend we should change the history of hitting
-                //so paddleTouched staore last hit to help us to have correct color
-                System.out.println("ball hit the Right paddle");
-            }
-            if (ball.x <= paddleL.x + paddleL.PADDLE_WIDTH &&
-                    ball.y + ball.diameter >= paddleL.y &&
-                    ball.y <= bottomOfPaddleL) {// NOT OK
-                ball.xDirect *= -1;
-                paddleTouched = 'L';//so when collision happend we should change the history of hitting
-                //so paddleTouched staore last hit to help us to have correct color
-                System.out.println("ball hit the left paddle");
-            }
-            if (ball.x < 0) {
-                ball.xDirect *= -1;
-                scoreR.scoreUp();
-
-                System.out.println("ball passed the left border");
-            }
-            if (ball.x > GAME_PANEL_WIDTH - ball.diameter) {
-                ball.xDirect *= -1;
-                scoreL.scoreUp();
-                System.out.println("ball passed the right border");
-            }
         }
     }
 

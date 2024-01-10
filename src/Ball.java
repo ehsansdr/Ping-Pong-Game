@@ -1,12 +1,15 @@
 import java.awt.*;
+import java.util.Random;
 
 public class Ball extends Rectangle {
     int diameter = 25;
-    int x = 400;
-    int y = 300;
-    int speed = 5 ;
-    int xDirect = 1;
+    int x = 130;//180 50  -1 +1 ,,,, 130 450  -1 -1 it  for checking physics rules
+    int y = 450;
+    int speed = 1 ;
+    int xDirect = -1;
     int yDirect = -1;
+
+    private Random random;
 
     public Ball() {
 
@@ -15,7 +18,7 @@ public class Ball extends Rectangle {
 
     public void move(){
         x += speed * xDirect;
-        //y += speed * yDirect;
+        y += speed * yDirect;
     }
 
 

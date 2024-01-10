@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0dfdb6a6-01bc-4d78-a260-4fe2466374bb" name="Changes" comment="new game and setting and checking rules done">
+    <list default="true" id="0dfdb6a6-01bc-4d78-a260-4fe2466374bb" name="Changes" comment="ball color changing set">
+      <change afterPath="$PROJECT_DIR$/src/Physics.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Ball.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Ball.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/GamePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GamePanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Input.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Input.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PingPongGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PingPongGame.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -142,7 +145,13 @@
       <option name="presentableId" value="LOCAL‎۰۰۰۱۳" />
       <updated>1704813596836</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL‎۰۰۰۱۴" summary="ball color changing set">
+      <created>1704884765522</created>
+      <option name="number" value="LOCAL‎۰۰۰۱۴" />
+      <option name="presentableId" value="LOCAL‎۰۰۰۱۴" />
+      <updated>1704884765522</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -172,6 +181,7 @@
     <MESSAGE value="newgame() and  starting done" />
     <MESSAGE value="new game and settinf and checking rules done" />
     <MESSAGE value="new game and setting and checking rules done" />
-    <option name="LAST_COMMIT_MESSAGE" value="new game and setting and checking rules done" />
+    <MESSAGE value="ball color changing set" />
+    <option name="LAST_COMMIT_MESSAGE" value="ball color changing set" />
   </component>
 </project>

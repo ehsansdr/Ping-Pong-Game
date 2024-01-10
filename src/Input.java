@@ -6,7 +6,7 @@ public class Input extends KeyAdapter {
 
     public Input(GamePanel gamePanel) {
         this.gamePanel = gamePanel;
-        System.out.println("Input");
+        //System.out.println("Input");
     }
 
     @Override

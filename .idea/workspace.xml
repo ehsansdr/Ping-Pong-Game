@@ -1,13 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0dfdb6a6-01bc-4d78-a260-4fe2466374bb" name="Changes" comment="newgame() and  starting done">
+    <list default="true" id="0dfdb6a6-01bc-4d78-a260-4fe2466374bb" name="Changes" comment="new game and setting and checking rules done">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Ball.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Ball.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/GamePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GamePanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Input.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Input.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Paddle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Paddle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/PingPongGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PingPongGame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Score.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Score.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -139,7 +136,13 @@
       <option name="presentableId" value="LOCAL‎۰۰۰۱۲" />
       <updated>1704809736106</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL‎۰۰۰۱۳" summary="new game and setting and checking rules done">
+      <created>1704813596836</created>
+      <option name="number" value="LOCAL‎۰۰۰۱۳" />
+      <option name="presentableId" value="LOCAL‎۰۰۰۱۳" />
+      <updated>1704813596836</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -167,6 +170,8 @@
     <MESSAGE value="paddle collision done" />
     <MESSAGE value="winner info drawer craeted" />
     <MESSAGE value="newgame() and  starting done" />
-    <option name="LAST_COMMIT_MESSAGE" value="newgame() and  starting done" />
+    <MESSAGE value="new game and settinf and checking rules done" />
+    <MESSAGE value="new game and setting and checking rules done" />
+    <option name="LAST_COMMIT_MESSAGE" value="new game and setting and checking rules done" />
   </component>
 </project>

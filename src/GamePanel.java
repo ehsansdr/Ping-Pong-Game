@@ -14,6 +14,11 @@ public class GamePanel extends JPanel {
     public Score scoreL ;
     private Ball ball;
 
+    public char paddleTouched = 'N';//because feature when ball hit the red paddle repaint to red and when
+    //hit blue return to blue color
+    //and in beginning because it doesn't have any hit instead of null we have 'N' it means : no hit yet
+    //we declare it for that and for using in ball draw() parameter
+
     int middleCircleDiameter = 240;
 
     public int borderGapFrom = 8;
@@ -99,12 +104,16 @@ public class GamePanel extends JPanel {
                     ball.y <= bottomOfPaddleR) {
 
                 ball.xDirect *= -1;
+                paddleTouched = 'R';//so when collision happend we should change the history of hitting
+                //so paddleTouched staore last hit to help us to have correct color
                 System.out.println("ball hit the Right paddle");
             }
             if (ball.x <= paddleL.x + paddleL.PADDLE_WIDTH &&
                     ball.y + ball.diameter >= paddleL.y &&
                     ball.y <= bottomOfPaddleL) {// NOT OK
                 ball.xDirect *= -1;
+                paddleTouched = 'L';//so when collision happend we should change the history of hitting
+                //so paddleTouched staore last hit to help us to have correct color
                 System.out.println("ball hit the left paddle");
             }
             if (ball.x < 0) {
@@ -145,7 +154,11 @@ public class GamePanel extends JPanel {
         paddleR.draw(g);
         scoreL.draw(g);
         scoreR.draw(g);
-        ball.draw(g);
+
+        //because we don't want to have extra objects in ball class fields so we get it as parameter
+        //to use its color
+        ball.draw(g,paddleTouched,paddleR,paddleL);//this draw method because have change and we don't want
+        //to have extra objects in ball class so we transfer that by parameter to ball class
 
 
         //when someone wins :

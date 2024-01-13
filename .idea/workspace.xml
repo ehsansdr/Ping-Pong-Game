@@ -1,16 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0dfdb6a6-01bc-4d78-a260-4fe2466374bb" name="Changes" comment="physics rules for paddle l is done 2">
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/lombok.xml" afterDir="false" />
+    <list default="true" id="0dfdb6a6-01bc-4d78-a260-4fe2466374bb" name="Changes" comment="speed up when hit paddle">
+      <change afterPath="$PROJECT_DIR$/sounds/ball hit the fence 2.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sounds/ball hit the fence.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sounds/ball hit the paddle.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sounds/ball thit the paddle 2.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sounds/score Sound.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sounds/winner sound.wav" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PingPongGame.iml" beforeDir="false" afterPath="$PROJECT_DIR$/PingPongGame.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Ball.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Ball.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/GamePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GamePanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Paddle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Paddle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Input.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Input.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Physics.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Physics.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Score.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Score.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PingPongGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PingPongGame.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,12 +48,18 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "last_opened_file_path": "C:/lombok.jar",
+    "last_opened_file_path": "C:/Users/Public/src/src/com/company/PingPongGame/sounds",
     "project.structure.last.edited": "Libraries",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.2"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Public\src\src\com\company\PingPongGame\sounds" />
+      <recent name="C:\Users\Public\src\src\com\company\PingPongGame\.res" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
@@ -175,7 +185,13 @@
       <option name="presentableId" value="LOCAL‎۰۰۰۱۷" />
       <updated>1704894079819</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL‎۰۰۰۱۸" summary="speed up when hit paddle">
+      <created>1705128963697</created>
+      <option name="number" value="LOCAL‎۰۰۰۱۸" />
+      <option name="presentableId" value="LOCAL‎۰۰۰۱۸" />
+      <updated>1705128963697</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -209,6 +225,7 @@
     <MESSAGE value="phisics rules for paddle l is done" />
     <MESSAGE value="phisics rules for paddle l is done 2" />
     <MESSAGE value="physics rules for paddle l is done 2" />
-    <option name="LAST_COMMIT_MESSAGE" value="physics rules for paddle l is done 2" />
+    <MESSAGE value="speed up when hit paddle" />
+    <option name="LAST_COMMIT_MESSAGE" value="speed up when hit paddle" />
   </component>
 </project>

@@ -1,5 +1,10 @@
+import javax.sound.sampled.AudioInputStream;
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.Clip;
 import javax.swing.*;
 import java.awt.*;
+import java.io.File;
+import java.io.FileNotFoundException;
 
 public class GamePanel extends JPanel {
     boolean gameRunning;
@@ -23,8 +28,25 @@ public class GamePanel extends JPanel {
     int middleCircleDiameter = 240;
 
     public int borderGapFrom = 8;
+//******** for paddle touch
+    File songHitPaddleNameFile;
+    AudioInputStream songHitPaddleNameAIS;
+    Clip songHitPaddleNameClip;
+//******** for border touch
 
-    public GamePanel() {
+    File songHitBorderNameFile;
+    AudioInputStream songHitBorderNameAIS;
+    Clip songHitBorderNameClip;
+//******** for score sound
+    File songScoreNameFile;
+    AudioInputStream songScoreNameAIS;
+    Clip songScoreNameClip;
+//******** for winner sound
+    File songWinnerNameFile;
+    AudioInputStream songWinnerNameAIS;
+    Clip songWinnerNameClip;
+
+    public GamePanel()  {
         newGame();
 
         this.setPreferredSize(new Dimension(GAME_PANEL_WIDTH,GAME_PANEL_HEIGHT));
@@ -38,7 +60,7 @@ public class GamePanel extends JPanel {
         this.addKeyListener(inputController);
 
     }
-    public void newGame(){
+    public void newGame() {
         gameRunning = true;
         objectCreation();
         ball.newBall();
@@ -51,6 +73,11 @@ public class GamePanel extends JPanel {
         scoreL = new Score(paddleL);
         scoreR = new Score(paddleR);
         ball = new Ball();
+
+        //because we have fbs drop in firs second of excution we found out we should declare it
+        //in fisrt just once
+
+
         physicsRules = new Physics(this,paddleR,paddleL,ball);
         inputController = new Input(this);
     }
@@ -80,12 +107,85 @@ public class GamePanel extends JPanel {
         //for winner detecting these ifs do them
         if (scoreL.set == 2 ){
             paddleL.isItWinner =true;
+            //playSetSound();
             gameRunning = false;
         }else if (scoreR.set == 2 ){
             paddleR.isItWinner =true;
+            //playSetSound();
             gameRunning = false;
         }
     }
+
+    public void playHitPaddleSound(){
+        try {
+
+            this.songHitPaddleNameFile = new File("sounds/ball hit the paddle.wav");
+            this.songHitPaddleNameAIS = AudioSystem.getAudioInputStream(this.songHitPaddleNameFile.toURI().toURL());
+            this.songHitPaddleNameClip = AudioSystem.getClip();
+            this.songHitPaddleNameClip.open(songHitPaddleNameAIS);
+            this.songHitPaddleNameClip.start();
+
+        }catch (FileNotFoundException e){
+            System.out.println("FileNotFoundException in playHitPaddleSound()");
+        }catch (Exception e){
+            System.out.println("Exception in playHitPaddleSound()");
+        }
+        System.out.println("\n\nplayHitPaddleSound() ");
+
+    }
+
+    //maybe we have same codes in to methods ,but I think I will have better sound effect
+    //and it may change and may file path name change
+    public void playHitBorderSound() {
+        try {
+
+            this.songHitBorderNameFile = new File("sounds/ball hit the paddle.wav");
+            this.songHitBorderNameAIS = AudioSystem.getAudioInputStream(this.songHitBorderNameFile.toURI().toURL());
+            this.songHitBorderNameClip = AudioSystem.getClip();
+            this.songHitBorderNameClip.open(songHitBorderNameAIS);
+            this.songHitBorderNameClip.start();
+
+        }catch (FileNotFoundException e){
+            System.out.println("FileNotFoundException in playHitBorderSound()");
+        }catch (Exception e){
+            System.out.println("Exception in playHitBorderSound()");
+        }
+        System.out.println("\n\nplayHitBorderSound() ");
+    }
+
+    public void playHitScoreSound() {
+        try {
+
+            this.songScoreNameFile = new File("sounds/score Sound.wav");
+            this.songScoreNameAIS = AudioSystem.getAudioInputStream(this.songScoreNameFile.toURI().toURL());
+            this.songScoreNameClip = AudioSystem.getClip();
+            this.songScoreNameClip.open(songScoreNameAIS);
+            this.songScoreNameClip.start();
+
+        }catch (FileNotFoundException e){
+            System.out.println("FileNotFoundException in playHitScoreSound()");
+        }catch (Exception e){
+            System.out.println("Exception in playHitScoreSound()");
+        }
+        System.out.println("\n\nplayHitScoreSound()");
+    }
+    public void playWinnerSound() {
+        try {
+
+            this.songWinnerNameFile = new File("sounds/winner sound.wav");
+            this.songWinnerNameAIS = AudioSystem.getAudioInputStream(this.songWinnerNameFile.toURI().toURL());
+            this.songWinnerNameClip = AudioSystem.getClip();
+            this.songWinnerNameClip.open(songWinnerNameAIS);
+            this.songWinnerNameClip.start();
+
+        }catch (FileNotFoundException e){
+            System.out.println("FileNotFoundException in playHitScoreSound()");
+        }catch (Exception e){
+            System.out.println("Exception in playHitScoreSound()");
+        }
+        System.out.println("\n\nplayHitScoreSound()");
+    }
+
 
     @Override
     public void paint(Graphics g) {

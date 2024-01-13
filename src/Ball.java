@@ -8,7 +8,7 @@ public class Ball extends Rectangle {
     // for checking  edges right (830 to 812) 380  1 -1 ,,,, (802) 145  1 1 it  for checking physics rules
     int x = 830;
     int y = 380;
-    int speed = 2 ;
+    int speed = 3 ;/** BE CAREFUL SPEED OF BALL CHANGE IN newBall() method to*/
     int xDirect = 1;
     int yDirect = -1;
 
@@ -21,20 +21,10 @@ public class Ball extends Rectangle {
     public void newBall(){
 
         //because in physics hit we speed up the ball after each paddle hit we should reset that
-        speed = 2;
+        speed = 4;
 
         int randomNumber;
-        for (;;) {//this for ;oop checa n goes until we get our true random number -1 or 1
-            randomNumber = random.nextInt(2) - 1;
-            System.out.println("randomNumber : " + randomNumber);
-            if (randomNumber == 0){
-                continue;
-            }else
-            {
-                System.out.println("randomNumber : " + randomNumber);
-                break;
-            }
-        }
+
 
         x = random.nextInt(500) + 200;
         y = random.nextInt(350) + 150;

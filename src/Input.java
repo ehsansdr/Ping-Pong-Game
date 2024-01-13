@@ -10,7 +10,7 @@ public class Input extends KeyAdapter {
     }
 
     @Override
-    public void keyPressed(KeyEvent e) {
+    public void keyPressed(KeyEvent e)  {
         //this class help us to move snake in panel
 
         switch (e.getKeyCode()){
@@ -33,7 +33,11 @@ public class Input extends KeyAdapter {
                 //we have this if because we want only use t when game is over
                 //not in middle of game when it appears to press we allow to press
                 if (!gamePanel.gameRunning)
-                    gamePanel.newGame();
+                    try {
+                        gamePanel.newGame();
+                    }catch (Exception E){
+                        System.out.println("input class get exception");
+                    }
                 break;
         }
     }

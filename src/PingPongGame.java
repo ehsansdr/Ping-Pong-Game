@@ -5,7 +5,7 @@ public class PingPongGame implements Runnable {
     GameFrame gameFrame;
     GamePanel gamePanel;
 
-    public PingPongGame() {
+    public PingPongGame(){
         gamePanel = new GamePanel();
         gameFrame = new GameFrame(gamePanel);
 
@@ -15,7 +15,7 @@ public class PingPongGame implements Runnable {
     }
 
     @Override
-    public void run() {
+    public void run(){
         double timePerFrame = 1000000000.0 / fps;
         double timePerUpdate = 1000000000.0 / UPS;
 
@@ -37,7 +37,11 @@ public class PingPongGame implements Runnable {
 
             if (deltaU >= 1) {
                 gamePanel.update();
-                gamePanel.physicsRules.collisionChecking();
+                try {
+                    gamePanel.physicsRules.collisionChecking();
+                }catch (Exception e){
+                    System.out.println("\n\n\nwe have exception in gamePanel.physicsRules.collisionChecking()");
+                }
                 gamePanel.rulesChecker();//detecting winner and start new round when hit the borders
                 //and score issues check here
                 updates++;

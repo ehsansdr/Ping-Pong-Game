@@ -12,7 +12,7 @@ public class GamePanel extends JPanel {
     private Graphics g;
     public Score scoreR ;
     public Score scoreL ;
-    private Ball ball;
+    public Ball ball;
     public Physics physicsRules;
 
     public char paddleTouched = 'N';//because feature when ball hit the red paddle repaint to red and when
@@ -41,6 +41,8 @@ public class GamePanel extends JPanel {
     public void newGame(){
         gameRunning = true;
         objectCreation();
+        ball.newBall();
+
     }
 
     private void objectCreation() {

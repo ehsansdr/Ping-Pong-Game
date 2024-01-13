@@ -15,7 +15,7 @@ public class Score extends Rectangle {
     private int widthOfSet = 30;
     private int heigthOfSet = 40 ;
     private int gapFromMiddle = 20;
-    private int gapBetwenScoreAndSet = 20;
+    private int gapBetweenScoreAndSet = 20;
     Color colorOfScore;
     Color colorOfSet;
     Font fontOfScore = new Font("Consolas",Font.BOLD,60);
@@ -28,13 +28,13 @@ public class Score extends Rectangle {
             colorOfScore = paddle.colorOfPaddle;
             colorOfSet = new Color(0x91021B);
             xOfScore = (900 / 2) + gapFromMiddle;
-            xOfSet = xOfScore + fontOfScore.getSize() + gapBetwenScoreAndSet;
+            xOfSet = xOfScore + fontOfScore.getSize() + gapBetweenScoreAndSet;
         }else if (id == 'L'){
             colorOfScore = paddle.colorOfPaddle;
             colorOfSet = new Color(0x2B4B83);
             xOfScore = (900 / 2) - fontOfScore.getSize() - gapFromMiddle;//we use fontOfScore.getSize() becuase we can define size
             //or get sze of our string
-            xOfSet = (900 / 2) - gapFromMiddle - fontOfScore.getSize() - gapBetwenScoreAndSet - 10;
+            xOfSet = (900 / 2) - gapFromMiddle - fontOfScore.getSize() - gapBetweenScoreAndSet - 10;
         }
     }
 
@@ -42,6 +42,7 @@ public class Score extends Rectangle {
         score++;
         System.out.println(this.id + " gains score");
     }
+
 
 
 

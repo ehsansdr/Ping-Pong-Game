@@ -25,7 +25,8 @@ public class Physics {
                 ball.yDirect *= -1;
                 System.out.println("ball hit the bottom of frame");
             }
-            if (ball.y == 0) {
+
+            if (ball.y <= 0) {
                 ball.yDirect *= -1;
                 System.out.println("ball hit the upper of frame");
             }
@@ -37,6 +38,14 @@ public class Physics {
                 gamePanel.paddleTouched = 'R';//so when collision happened we should change the history of hitting
                 //so paddleTouched store last hit to help us to have correct color
                 System.out.println("Right paddle hit");
+
+                gamePanel.ball.speed ++;
+
+                if (gamePanel.ball.speed % 2 == 1) {
+                    paddleR.speed++;
+                    paddleL.speed++;
+                    System.out.println("speed up");
+                }
             }
             if (ball.x <= paddleL.x + paddleL.PADDLE_WIDTH &&
                     ball.y + ball.diameter > paddleL.y &&
@@ -45,6 +54,14 @@ public class Physics {
                 gamePanel.paddleTouched = 'L';//so when collision happened we should change the history of hitting
                 //so paddleTouched store last hit to help us to have correct color
                 System.out.println("Left paddle hit");
+
+                gamePanel.ball.speed ++;
+
+                if (gamePanel.ball.speed % 2 == 1) {
+                    paddleR.speed++;
+                    paddleL.speed++;
+                    System.out.println("speed up");
+                }
             }
 
 
@@ -101,12 +118,21 @@ public class Physics {
             if (ball.x < 0) {
                 ball.xDirect *= -1;
                 gamePanel.scoreR.scoreUp();
-
+                if (gamePanel.scoreR.set != 2){
+                    gamePanel.ball.newBall();
+                    gamePanel.paddleL.speed = 5;
+                    gamePanel.paddleR.speed = 5;
+                }
                 System.out.println("ball passed the left border");
             }
             if (ball.x > gamePanel.GAME_PANEL_WIDTH - ball.diameter) {
                 ball.xDirect *= -1;
                 gamePanel.scoreL.scoreUp();
+                if (gamePanel.scoreR.set != 2) {
+                    gamePanel.ball.newBall();
+                    gamePanel.paddleL.speed = 5;
+                    gamePanel.paddleR.speed = 5;
+                }
                 System.out.println("ball passed the right border");
             }
         }

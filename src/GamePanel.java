@@ -33,7 +33,6 @@ public class GamePanel extends JPanel {
     AudioInputStream songHitPaddleNameAIS;
     Clip songHitPaddleNameClip;
 //******** for border touch
-
     File songHitBorderNameFile;
     AudioInputStream songHitBorderNameAIS;
     Clip songHitBorderNameClip;
@@ -117,6 +116,12 @@ public class GamePanel extends JPanel {
     }
 
     public void playHitPaddleSound(){
+        //when ball hit the paddles  this method will use and play
+        /** we have fbs drop in first playing sound it because of File and Audio and playHitPaddleSound()
+         and playing sound method
+         FIX THIS
+         */
+
         try {
 
             this.songHitPaddleNameFile = new File("sounds/ball hit the paddle.wav");
@@ -137,6 +142,13 @@ public class GamePanel extends JPanel {
     //maybe we have same codes in to methods ,but I think I will have better sound effect
     //and it may change and may file path name change
     public void playHitBorderSound() {
+        //when ball hit the up border or down this method will use and play
+
+        /** we have fbs drop in first playing sound it because of File and Audio and playHitPaddleSound()
+         and playing sound method
+         FIX THIS
+         */
+
         try {
 
             this.songHitBorderNameFile = new File("sounds/ball hit the paddle.wav");
@@ -153,7 +165,15 @@ public class GamePanel extends JPanel {
         System.out.println("\n\nplayHitBorderSound() ");
     }
 
+
     public void playHitScoreSound() {
+        //when ball hit the left border or right and score up this method will use and play
+
+        /** we have fbs drop in first playing sound it because of File and Audio and playHitPaddleSound()
+         and playing sound method
+         FIX THIS
+         */
+
         try {
 
             this.songScoreNameFile = new File("sounds/score Sound.wav");
@@ -170,6 +190,15 @@ public class GamePanel extends JPanel {
         System.out.println("\n\nplayHitScoreSound()");
     }
     public void playWinnerSound() {
+        //when somebody wins this method will use and play
+
+        /** BUT PLAY ON AND ON BECAUSE EXECUTE ON ON ON SOMEWHERE
+         * P;ACE IT SOMEWHERE CORRECTLY OR USE BOOLEAN OR VARIABLES*/
+
+        /** we have fbs drop in first playing sound it because of File and Audio and playHitPaddleSound()
+         and playing sound method
+         FIX THIS
+         */
         try {
 
             this.songWinnerNameFile = new File("sounds/winner sound.wav");

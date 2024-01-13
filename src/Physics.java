@@ -13,7 +13,7 @@ public class Physics {
         this.ball = ball;
     }
 
-    public void collisionChecking()throws Exception{
+    public void collisionChecking(){
 
 
         ///we didn't need to check and score up when game in not running

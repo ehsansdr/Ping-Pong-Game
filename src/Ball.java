@@ -8,7 +8,7 @@ public class Ball extends Rectangle {
     // for checking  edges right (830 to 812) 380  1 -1 ,,,, (802) 145  1 1 it  for checking physics rules
     int x = 830;
     int y = 380;
-    int speed = 3 ;/** BE CAREFUL SPEED OF BALL CHANGE IN newBall() method to*/
+    int speed;/** BE CAREFUL SPEED OF BALL CHANGE IN newBall() method to*/
     int xDirect = 1;
     int yDirect = -1;
 
@@ -21,13 +21,19 @@ public class Ball extends Rectangle {
     public void newBall(){
 
         //because in physics hit we speed up the ball after each paddle hit we should reset that
-        speed = 4;
+        this.speed = 5;
 
-        int randomNumber;
+        this.x = random.nextInt(500) + 200;
+        this.y = random.nextInt(350) + 150;
 
+        //this if and else prevent to spawn and direction of ball to spawn and hit very close
+        //to border it check for example if we want to spawn the ball in left field shout ball to the right
 
-        x = random.nextInt(500) + 200;
-        y = random.nextInt(350) + 150;
+        if (this.x < 450){
+            xDirect = 1;
+        }else {
+            xDirect = -1;
+        }
 
     }
 

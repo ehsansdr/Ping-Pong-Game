@@ -22,13 +22,13 @@ public class Physics {
             int bottomOfPaddleL = paddleL.y + paddleL.PADDLE_HEIGHT;
 
             if (ball.y + ball.diameter >= gamePanel.GAME_PANEL_HEIGHT) {
-                ball.yDirect *= -1;
+                ball.yDirect = -1;
                 System.out.println("ball hit the bottom of frame");
                 gamePanel.playHitBorderSound();
             }
 
             if (ball.y <= 0) {
-                ball.yDirect *= -1;
+                ball.yDirect = 1;
                 System.out.println("ball hit the upper of frame");
                 gamePanel.playHitBorderSound();
             }
@@ -112,7 +112,16 @@ public class Physics {
                 ball.xDirect *= -1;
 
                 gamePanel.scoreR.scoreUp();
+
+                //because we have new round in the current game we want to set the ball color to
+                //white until hits one paddle
+                gamePanel.paddleTouched = 'N';
                 gamePanel.playHitScoreSound();
+
+                //palace paddle in middle
+                paddleL.setPaddleToDefault();
+                paddleR.setPaddleToDefault();
+
                 if (gamePanel.scoreR.set != 2){
                     gamePanel.ball.newBall();
                     gamePanel.paddleL.speed = 5;
@@ -122,9 +131,18 @@ public class Physics {
             }
             if (ball.x > gamePanel.GAME_PANEL_WIDTH - ball.diameter) {
                 ball.xDirect *= -1;
+                //palace paddle in middle
 
                 gamePanel.scoreL.scoreUp();
+
+                //because we have new round in the current game we want to set the ball color to
+                //white until hits one paddle
+                gamePanel.paddleTouched = 'N';
+
                 gamePanel.playHitScoreSound();
+
+                paddleL.setPaddleToDefault();
+                paddleR.setPaddleToDefault();
                 if (gamePanel.scoreR.set != 2) {
                     gamePanel.ball.newBall();
                     gamePanel.paddleL.speed = 5;

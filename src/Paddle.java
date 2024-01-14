@@ -62,6 +62,10 @@ public class Paddle extends Rectangle {
             goDown();
         }
     }
+
+    public void setPaddleToDefault(){
+        this.y = (panelHeight / 2) - (PADDLE_HEIGHT / 2);
+    }
     public void goUp(){
         if (y <= 0){
             y = 0;

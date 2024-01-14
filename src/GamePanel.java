@@ -5,6 +5,9 @@ import javax.swing.*;
 import java.awt.*;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.util.Collections;
+
+import static java.lang.Thread.sleep;
 
 public class GamePanel extends JPanel {
     boolean gameRunning;
@@ -12,6 +15,9 @@ public class GamePanel extends JPanel {
     public final int GAME_PANEL_HEIGHT =  550;//(int) GAME_PANEL_WIDTH * (5/9)
     Color panelColor = new Color(0x14213D);
     Input inputController;
+
+    //it because we want to prevent the bug that execute winner sound again because thread execute again
+    int howManyTimeWinnerPlayed = 0;
     public Paddle paddleR ;
     public Paddle paddleL;
     private Graphics g;
@@ -44,25 +50,47 @@ public class GamePanel extends JPanel {
     File songWinnerNameFile;
     AudioInputStream songWinnerNameAIS;
     Clip songWinnerNameClip;
+//******** for winner sound
+    File startNewGameSongFile;
+    AudioInputStream startNewGameSongAIS;
+    Clip startNewGameSongClip;
 
     public GamePanel()  {
-        newGame();
 
         this.setPreferredSize(new Dimension(GAME_PANEL_WIDTH,GAME_PANEL_HEIGHT));
         this.setBackground(panelColor);
         this.setLayout(null);
         //this.add(paddleL); we don't use add fo rectangle subclass we use draw
         //this.add(paddleR);
+        newGame();
 
         //setFocusable(true); is essential to have key listener
         this.setFocusable(true);/*****************************/
         this.addKeyListener(inputController);
 
+
     }
     public void newGame() {
+        playStartNewGameSound();
         gameRunning = true;
         objectCreation();
         ball.newBall();
+
+
+        /** this try catch commented because I want to say s.t
+         * because we have running thread as game loop this Thread.sleep(5000);
+         * stop game loop if you uncomment the sout in run method in PingPong.class
+         * */
+//        try{
+//            new Thread().sleep(5000);
+//        or
+//        Thread.sleep(5000);
+//        }catch (Exception e){
+//            System.out.println("Exception in Thread.sleep(5000");
+//        }
+        //it because we want tp prevent the bug that execute again bucause thread execute again
+        howManyTimeWinnerPlayed = 0;
+
 
     }
 
@@ -71,6 +99,9 @@ public class GamePanel extends JPanel {
         paddleR = new Paddle('R',GAME_PANEL_WIDTH,GAME_PANEL_HEIGHT);
         scoreL = new Score(paddleL);
         scoreR = new Score(paddleR);
+
+
+
         ball = new Ball();
 
         //because we have fbs drop in firs second of excution we found out we should declare it
@@ -106,11 +137,13 @@ public class GamePanel extends JPanel {
         //for winner detecting these ifs do them
         if (scoreL.set == 2 ){
             paddleL.isItWinner =true;
-            //playSetSound();
+            playWinnerSound();
             gameRunning = false;
         }else if (scoreR.set == 2 ){
             paddleR.isItWinner =true;
-            //playSetSound();
+
+            playWinnerSound();
+
             gameRunning = false;
         }
     }
@@ -189,30 +222,54 @@ public class GamePanel extends JPanel {
         }
         System.out.println("\n\nplayHitScoreSound()");
     }
+    public void playStartNewGameSound() {
+        //when ball hit the left border or right and score up this method will use and play
+
+        /** we have fbs drop in first playing sound it because of File and Audio and playHitPaddleSound()
+         and playing sound method
+         FIX THIS
+         */
+
+        try {
+
+            this.startNewGameSongFile = new File("sounds/start game sound.wav");
+            this.startNewGameSongAIS = AudioSystem.getAudioInputStream(this.startNewGameSongFile.toURI().toURL());
+            this.startNewGameSongClip = AudioSystem.getClip();
+            this.startNewGameSongClip.open(startNewGameSongAIS);
+            this.startNewGameSongClip.start();
+
+        }catch (FileNotFoundException e){
+            System.out.println("FileNotFoundException in playHitScoreSound()");
+        }catch (Exception e){
+            System.out.println("Exception in playStartNewGameSound()");
+        }
+        System.out.println("\n\nplayStartNewGameSound()");
+    }
     public void playWinnerSound() {
         //when somebody wins this method will use and play
 
         /** BUT PLAY ON AND ON BECAUSE EXECUTE ON ON ON SOMEWHERE
          * P;ACE IT SOMEWHERE CORRECTLY OR USE BOOLEAN OR VARIABLES*/
 
-        /** we have fbs drop in first playing sound it because of File and Audio and playHitPaddleSound()
-         and playing sound method
-         FIX THIS
-         */
-        try {
 
-            this.songWinnerNameFile = new File("sounds/winner sound.wav");
-            this.songWinnerNameAIS = AudioSystem.getAudioInputStream(this.songWinnerNameFile.toURI().toURL());
-            this.songWinnerNameClip = AudioSystem.getClip();
-            this.songWinnerNameClip.open(songWinnerNameAIS);
-            this.songWinnerNameClip.start();
+        if(howManyTimeWinnerPlayed == 0) {
 
-        }catch (FileNotFoundException e){
-            System.out.println("FileNotFoundException in playHitScoreSound()");
-        }catch (Exception e){
-            System.out.println("Exception in playHitScoreSound()");
+            try {
+
+                this.songWinnerNameFile = new File("sounds/winner sound.wav");
+                this.songWinnerNameAIS = AudioSystem.getAudioInputStream(this.songWinnerNameFile.toURI().toURL());
+                this.songWinnerNameClip = AudioSystem.getClip();
+                this.songWinnerNameClip.open(songWinnerNameAIS);
+                this.songWinnerNameClip.start();
+                howManyTimeWinnerPlayed++;
+
+            } catch (FileNotFoundException e) {
+                System.out.println("FileNotFoundException in playHitScoreSound()");
+            } catch (Exception e) {
+                System.out.println("Exception in playWinnerSound()");
+            }
+            System.out.println("\n\nplayWinnerSound()");
         }
-        System.out.println("\n\nplayHitScoreSound()");
     }
 
 

@@ -1,14 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0dfdb6a6-01bc-4d78-a260-4fe2466374bb" name="Changes" comment="sound added">
-      <change afterPath="$PROJECT_DIR$/sounds/start game sound.wav" afterDir="false" />
+    <list default="true" id="0dfdb6a6-01bc-4d78-a260-4fe2466374bb" name="Changes" comment="many updated on ball color and ball spawn">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Ball.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Ball.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GamePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GamePanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Paddle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Paddle.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Physics.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Physics.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/PingPongGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PingPongGame.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -197,7 +193,13 @@
       <option name="presentableId" value="LOCAL‎۰۰۰۲۰" />
       <updated>1705134872613</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL‎۰۰۰۲۱" summary="many updated on ball color and ball spawn">
+      <created>1705218227212</created>
+      <option name="number" value="LOCAL‎۰۰۰۲۱" />
+      <option name="presentableId" value="LOCAL‎۰۰۰۲۱" />
+      <updated>1705218227213</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -233,6 +235,7 @@
     <MESSAGE value="physics rules for paddle l is done 2" />
     <MESSAGE value="speed up when hit paddle" />
     <MESSAGE value="sound added" />
-    <option name="LAST_COMMIT_MESSAGE" value="sound added" />
+    <MESSAGE value="many updated on ball color and ball spawn" />
+    <option name="LAST_COMMIT_MESSAGE" value="many updated on ball color and ball spawn" />
   </component>
 </project>

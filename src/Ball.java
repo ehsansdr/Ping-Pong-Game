@@ -12,6 +12,10 @@ public class Ball extends Rectangle {
     int xDirect = 1;
     int yDirect = -1;
 
+    char lastRoundWinner;//'R' or 'L' or null
+    //this var is we want to set ball in fair part and fair direction and
+    //control the ball spawn in new round
+
     private Random random;
 
     public Ball() {
@@ -19,16 +23,24 @@ public class Ball extends Rectangle {
     }
 
     public void newBall(){
-
-        //because in physics hit we speed up the ball after each paddle hit we should reset that
+        //because in physics hit we may speed up the ball after each paddle hit we should reset that
         this.speed = 5;
 
-        this.x = random.nextInt(500) + 200;
-        this.y = random.nextInt(350) + 150;
+        /**we added feature the program check if right ball pass left border spawn left
+         * and go to opposite direction to have more fair play*/
+        if (lastRoundWinner == 'R') {
+            this.x = random.nextInt(250) + 200;
+            this.y = random.nextInt(350) + 150;
+        }else if(lastRoundWinner == 'L'){
+            this.x = random.nextInt(250) + 450;
+            this.y = random.nextInt(350) + 150;
+        }else {
+            this.x = random.nextInt(500) + 250;
+            this.y = random.nextInt(350) + 150;
+        }
 
         //this if and else prevent to spawn and direction of ball to spawn and hit very close
         //to border it check for example if we want to spawn the ball in left field shout ball to the right
-
         if (this.x < 450){
             xDirect = 1;
         }else {

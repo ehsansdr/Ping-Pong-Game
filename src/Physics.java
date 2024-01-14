@@ -40,7 +40,7 @@ public class Physics {
                 gamePanel.paddleTouched = 'R';//so when collision happened we should change the history of hitting
                 //so paddleTouched store last hit to help us to have correct color
                 System.out.println("Right paddle hit");
-                gamePanel.playHitPaddleSound();;
+                gamePanel.playHitPaddleSound();
 
 
             }
@@ -94,7 +94,9 @@ public class Physics {
 
                     ball.yDirect = -1;
                     System.out.println("\nTOP EDGE OF PaddleR ");
-                    gamePanel.paddleTouched = 'R';//so when collision happened we should change the history of hitting
+                    gamePanel.paddleTouched = 'R';
+
+                    //so when collision happened we should change the history of hitting
                     //so paddleTouched store last hit to help us to have correct color
                     }
 
@@ -112,6 +114,8 @@ public class Physics {
                 ball.xDirect *= -1;
 
                 gamePanel.scoreR.scoreUp();
+                ball.lastRoundWinner = 'R';//we set the varibale that checks the ball spawn and
+                //last round winner
 
                 //because we have new round in the current game we want to set the ball color to
                 //white until hits one paddle
@@ -134,6 +138,8 @@ public class Physics {
                 //palace paddle in middle
 
                 gamePanel.scoreL.scoreUp();
+                ball.lastRoundWinner = 'L';//we set the varibale that checks the ball spawn and
+                //last round winner
 
                 //because we have new round in the current game we want to set the ball color to
                 //white until hits one paddle

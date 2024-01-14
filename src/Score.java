@@ -3,7 +3,9 @@ import java.awt.*;
 public class Score extends Rectangle {
     public char id ;//'L' or 'R'
     public int score ;
+    public static int scoreToWinSet = 5 ;//if paddle reach this have set
     public int set ;
+    public static int setToWinGame = 3 ;//if paddle reach this have win
     private Paddle paddle;
     private int xOfScore;
     private int yOfScore = 50 ;

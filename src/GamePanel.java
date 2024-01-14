@@ -121,13 +121,13 @@ public class GamePanel extends JPanel {
     }
     public void rulesChecker(){
         //each ball hitting the left wall and right wall these check their work
-        if(scoreL.score == 2){
+        if(scoreL.score == Score.scoreToWinSet){
             scoreL.score = 0;
             scoreL.set++;
             scoreR.score = 0;
             //newRound();
         }
-        if(scoreR.score == 2){
+        if(scoreR.score == Score.scoreToWinSet){
             scoreR.score = 0;
             scoreR.set++;
             scoreL.score = 0;
@@ -135,11 +135,11 @@ public class GamePanel extends JPanel {
         }
 
         //for winner detecting these ifs do them
-        if (scoreL.set == 2 ){
+        if (scoreL.set == Score.setToWinGame ){
             paddleL.isItWinner =true;
             playWinnerSound();
             gameRunning = false;
-        }else if (scoreR.set == 2 ){
+        }else if (scoreR.set == Score.setToWinGame ){
             paddleR.isItWinner =true;
 
             playWinnerSound();
